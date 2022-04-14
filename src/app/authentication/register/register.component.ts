@@ -14,8 +14,33 @@ export class RegisterComponent implements OnInit {
   termsConditions : boolean = false;
 
 
-  valideatePassword(){
-      window.alert('Not done yeat !');
+  valideateRegisterForm(){
+    this.validateName();
+    this.validateEmail();
+    this.validatePassword();
+      
+  }
+
+  validateEmail(){
+    if( this.email === ''){
+      window.alert('Email is required !');
+    }
+  }
+
+  validateName(){
+    if(this.name === ''){
+      window.alert('Name can not be Empty !');
+    }
+  }
+
+  validatePassword(){
+    if(this.password != this.comfirmPassword){
+      window.alert('Passwords are not the same ');
+    }else{
+      if(this.password === ''){
+        window.alert('password can not be empty!');
+      }
+    }
   }
 
 

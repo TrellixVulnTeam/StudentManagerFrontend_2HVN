@@ -11,6 +11,9 @@ export class SignupComponent implements OnInit {
   user : string = 'student';
   password : string ='student';
 
+  users: string[] = [];
+  passwords: string[] = [];
+
   providedUser = '';
   providedPassword =  '';
 
@@ -20,10 +23,7 @@ export class SignupComponent implements OnInit {
 
   constructor( private router: Router) { }
 
-  onCreateAccount(){
-    this.router.navigate(['/register'])
-  }
-
+ 
   onSubmit(){
     if( ( this.providedPassword === this.password) &&
         ( this.providedUser === this.user)){
