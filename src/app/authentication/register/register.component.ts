@@ -18,6 +18,9 @@ export class RegisterComponent implements OnInit {
     this.validateName();
     this.validateEmail();
     this.validatePassword();
+    if(this.termsConditions === false){
+      window.alert('Please heck your term of service checkBox');
+    }
       
   }
 
