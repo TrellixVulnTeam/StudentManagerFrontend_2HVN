@@ -1,0 +1,29 @@
+body{
+ 
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 99%;
+    height: 6%;
+    text-align: center;
+    font-size:  18px;
+    counter-reset: white;
+    color: azure;
+
+  }
+
+  img{
+    margin-left: 2%;
+  }
+
+  .navbar{
+    position: absolute;
+    height: 6%;
+    text-align: center;
+    font-size:  18px;
+    counter-reset: white;
+    color: azure;
+
+  }
