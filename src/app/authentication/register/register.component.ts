@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RegisterService } from 'src/app/services/register.service';
 
 @Component({
   selector: 'app-register',
@@ -7,49 +8,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  email: string = '';
-  name : string = '';
-  password : string = '';
+  name: string = '';
+  password: string = '';
   comfirmPassword: string = '';
-  termsConditions : boolean = false;
 
+  isNameCorrect: boolean = false;
+  isPasswordCorret: boolean = false;
 
-  valideateRegisterForm(){
+  valideateRegisterForm() {
     this.validateName();
-    this.validateEmail();
     this.validatePassword();
-    if(this.termsConditions === false){
-      window.alert('Please heck your term of service checkBox');
+    if (this.isNameCorrect && this.isPasswordCorret) {
+      this.userRegisterService.addUser(this.name, this.password);
+      console.log('In register component Name ' + this.name + ' Password ' + this.password)
+     
     }
-      
+
   }
 
-  validateEmail(){
-    if( this.email === ''){
-      window.alert('Email is required !');
-    }
-  }
-
-  validateName(){
-    if(this.name === ''){
+  validateName() {
+    if (this.name === '') {
       window.alert('Name can not be Empty !');
+    } else {
+      this.isNameCorrect = true;
     }
   }
 
-  validatePassword(){
-    if(this.password != this.comfirmPassword){
+  validatePassword() {
+    if (this.password != this.comfirmPassword) {
       window.alert('Passwords are not the same ');
-    }else{
-      if(this.password === ''){
-        window.alert('password can not be empty!');
-      }
+    }
+    if (this.password === '') {
+      window.alert('password can not be empty!');
+    }
+    if (this.password === this.comfirmPassword) {
+      this.isPasswordCorret = true;
     }
   }
 
+  constructor(private userRegisterService: RegisterService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }
