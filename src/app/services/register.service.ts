@@ -15,11 +15,15 @@ export class RegisterService {
   }
 
   checkUser(userName: string){
+    console.log('Student name ' + userName)
     for(let i = 0; i < this.users.length; i++){
       if(this.users[i].name.includes(userName)){
         console.log('loking for a student' + this.users.length);
         window.alert("User -> " + userName + " already exists")
         this.isFreeUserName = false;
+        break;
+      }else{
+        this.isFreeUserName = true;
       }
     }
   }
