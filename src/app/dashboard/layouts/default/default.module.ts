@@ -1,7 +1,6 @@
 import { ListofstudentsComponent } from './../../../listofstudents/listofstudents.component';
 import { AddstudentComponent } from './../../../addstudent/addstudent.component';
 import { NavbarComponent } from './../../../navbar/navbar.component';
-import { PostsComponent } from './../../posts/posts.component';
 import { AppRoutingModule } from './../../../app-routing.module';
 import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './../../dashboard.component';
@@ -12,15 +11,16 @@ import { UpdatestudentComponent } from 'src/app/updatestudent/updatestudent.comp
 import { FormsModule } from '@angular/forms';
 
 
+
 @NgModule({
   declarations: [
     DefaultComponent,
     DashboardComponent,
-    PostsComponent,
     NavbarComponent,
     AddstudentComponent,
     UpdatestudentComponent,
     ListofstudentsComponent,
+    
 
     
   ],

@@ -1,7 +1,8 @@
-import { Router } from '@angular/router';
-import { SignupComponent } from '../authentication/signup/signup.component';
+
 import { Component, OnInit } from '@angular/core';
-import { useAnimation } from '@angular/animations';
+import { RegisterService } from '../services/register.service';
+import { Student } from '../student';
+import { StudentService } from '../services/student.service';
 
 
 @Component({
@@ -13,11 +14,23 @@ export class DashboardComponent implements OnInit {
 
     title = 'DashBoard Component'
 
+    noOfUsers : number = 0; 
+    students: Student[] = [] ;
 
-
-  constructor() { }
+  private getStudents(){
+    this.studentService.getStudentsList().subscribe( data => {
+      this.students = data;
+    });
+  }
+    
+  constructor( private registerService: RegisterService, private studentService: StudentService ) { }
 
   ngOnInit(): void {
+    this.noOfUsers = this.registerService.getUsers().length;
+
+    this.studentService.getStudentsList().subscribe( data => {
+      this.students = data;
+    });
   }
 
 }

@@ -1,4 +1,4 @@
-import { PostsComponent } from './dashboard/posts/posts.component';
+
 import { DefaultComponent } from './dashboard/layouts/default/default.component';
 import { RegisterComponent } from './authentication/register/register.component';
 import { SignupComponent } from './authentication/signup/signup.component';
@@ -17,7 +17,6 @@ const routes: Routes = [
   { path: 'defaultComponent', component: DefaultComponent,
      children :[
        { path:'', component: DashboardComponent  },
-       { path: 'posts', component : PostsComponent},
        { path: 'students', component: ListofstudentsComponent},
        { path: 'students/updatestudent/:id', component: UpdatestudentComponent },
        { path: 'addstudent', component: AddstudentComponent }
