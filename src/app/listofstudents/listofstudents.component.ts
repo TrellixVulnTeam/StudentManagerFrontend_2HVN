@@ -13,7 +13,7 @@ export class ListofstudentsComponent implements OnInit {
 
   title =  "List of students";
 
-  age! : number ;
+
   students: Student[] = [] ;
 
   private getStudents(){
