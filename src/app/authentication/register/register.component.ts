@@ -21,9 +21,7 @@ export class RegisterComponent implements OnInit {
     if (this.isNameCorrect && this.isPasswordCorret) {
       this.userRegisterService.addUser(this.name, this.password);
       console.log('In register component Name ' + this.name + ' Password ' + this.password)
-     
     }
-
   }
 
   validateName() {

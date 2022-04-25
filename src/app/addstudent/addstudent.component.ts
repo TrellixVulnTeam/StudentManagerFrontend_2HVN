@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Student } from '../student';
-import { StudentService } from '../student.service';
+import { StudentService } from '../services/student.service';
 
 @Component({
   selector: 'app-addstudent',

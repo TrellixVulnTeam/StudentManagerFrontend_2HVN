@@ -11,6 +11,7 @@ import { NgModule } from '@angular/core';
 import { SignupComponent } from './authentication/signup/signup.component';
 import { RegisterComponent } from './authentication/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegisterService } from './services/register.service';
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DefaultModule
 
   ],
-  providers: [],
+  providers: [RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
