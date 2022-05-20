@@ -16,12 +16,6 @@ export class DashboardComponent implements OnInit {
 
     noOfUsers : number = 0; 
     students: Student[] = [] ;
-
-  private getStudents(){
-    this.studentService.getStudentsList().subscribe( data => {
-      this.students = data;
-    });
-  }
     
   constructor( private registerService: RegisterService, private studentService: StudentService ) { }
 
