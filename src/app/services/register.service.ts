@@ -11,7 +11,7 @@ export class RegisterService {
   isFreeUserName: boolean = true;
  
   constructor(private router: Router) { 
-    this.users.push(new User('new', 'new'))
+    this.users.push(new User('student', 'student'))
   }
 
   checkUser(userName: string){
